@@ -18,7 +18,6 @@ export class AuthService {
   async validateUser(username: string, pass: string): Promise<any> {
     const user = await this.usersService.findOne(username);
     if (user && user.password === pass) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { password, ...result } = user;
       // returns the result without the password property
       return result;
@@ -39,7 +38,7 @@ export class AuthService {
       sub: foundUser._id,
       role: '',
     };
-    if (foundUser.email === 'x@xb.fr') {
+    if (foundUser.email === 'sam@t.fr') {
       payload.role = 'admin';
     } else {
       payload.role = 'user';
